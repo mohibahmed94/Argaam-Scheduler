@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ArgaamSchedular")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d93c93404c1c2713b18abb762eb9f83b460a4dd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+befd61ddfcb7d2a6bb9a9ce50ce6a822b96308fa")]
 [assembly: System.Reflection.AssemblyProductAttribute("ArgaamSchedular")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ArgaamSchedular")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -4076,11 +4076,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Argaam-Schedular\\Argaam-Schedular\\Argaam-Schedular\\ArgaamSchedular.csproj",
+      "projectUniqueName": "D:\\ArgaamScheduler\\Argaam-Scheduler\\ArgaamSchedular.csproj",
       "projectName": "ArgaamSchedular",
-      "projectPath": "D:\\Argaam-Schedular\\Argaam-Schedular\\Argaam-Schedular\\ArgaamSchedular.csproj",
+      "projectPath": "D:\\ArgaamScheduler\\Argaam-Scheduler\\ArgaamSchedular.csproj",
       "packagesPath": "C:\\Users\\mohib\\.nuget\\packages\\",
-      "outputPath": "D:\\Argaam-Schedular\\Argaam-Schedular\\Argaam-Schedular\\obj\\",
+      "outputPath": "D:\\ArgaamScheduler\\Argaam-Scheduler\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mohib\\AppData\\Roaming\\NuGet\\NuGet.Config",

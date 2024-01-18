@@ -85,21 +85,30 @@ namespace ArgaamSchedular.Controllers
         [HttpPost("Schedule")]
         public IActionResult Schedule(string url, DateTime executionDateTime, string methodType, string requestBody = "")
         {
-            if (methodType == "GET")
+            switch(methodType)
             {
-                RecurringJob.AddOrUpdate($"dynamic-job-{Guid.NewGuid()}", () => Schedular.SendHttpRequest(url), Cron.Minutely());
-                return Ok($"Job scheduled to run daily at {executionDateTime} for URL: {url}");
+                case "Get":
+                    {
+                        RecurringJob.AddOrUpdate($"dynamic-job-{Guid.NewGuid()}", () => Schedular.SendHttpRequest(url), Cron.Minutely());
+                        return Ok($"Job scheduled to run daily at {executionDateTime} for URL: {url}");
+                    }
+                case "Post":
+                    {
+                        RecurringJob.AddOrUpdate($"dynamic-job-{Guid.NewGuid()}", () => Schedular.SendHttpPostRequest(url, requestBody), Cron.Minutely());
+                        return Ok($"Job scheduled to run daily at {executionDateTime} for URL: {url}");
+                    }
+                case "Put":
+                    {
+                        RecurringJob.AddOrUpdate($"dynamic-job-{Guid.NewGuid()}", () => Schedular.SendHttpPutRequest(url, requestBody), Cron.Minutely());
+                        return Ok($"Job scheduled to run daily at {executionDateTime} for URL: {url}");
+                    }
+                default:
+                    {
+                        RecurringJob.AddOrUpdate($"dynamic-job-{Guid.NewGuid()}", () => Schedular.SendHttpRequest(url), Cron.Minutely());
+                        return Ok($"Job scheduled to run daily at {executionDateTime} for URL: {url}");
+                    }
             }
-            else if(methodType == "POST")
-            {
-                RecurringJob.AddOrUpdate($"dynamic-job-{Guid.NewGuid()}", () => Schedular.SendHttpPostRequest(url, requestBody), Cron.Minutely());
-                return Ok($"Job scheduled to run daily at {executionDateTime} for URL: {url}");
-            }
-            else // if (methodType == "PUT")
-            {
-                RecurringJob.AddOrUpdate($"dynamic-job-{Guid.NewGuid()}", () => Schedular.SendHttpPutRequest(url, requestBody), Cron.Minutely());
-                return Ok($"Job scheduled to run daily at {executionDateTime} for URL: {url}");
-            }
+            
         }
 
 
