@@ -20,7 +20,7 @@ namespace ArgaamSchedular.Services.Interface
                 Frequency = model.Frequency,
                 ScheduleTime = model.ScheduleTime
             };
-
+            
             _context.ScheduledJobs.Add(job);
             _context.SaveChanges();
         }
@@ -28,7 +28,7 @@ namespace ArgaamSchedular.Services.Interface
         public async Task<IEnumerable<ScheduledJob>> GetAllJobs()
         {
             
-             var jobs =  _context.ScheduledJobs.ToList();
+             var jobs = await _context.ScheduledJobs.ToListAsync();
             return jobs;
             
         }
